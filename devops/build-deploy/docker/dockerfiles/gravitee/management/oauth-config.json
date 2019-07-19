@@ -1,0 +1,42 @@
+{
+    "name": "onesait account",
+    "type": "oidc",
+    "enabled": true,
+    "configuration": {
+        "scopes": [
+            "openid"
+        ],
+        "clientId": "onesaitplatform",
+        "clientSecret": "onesaitplatform",
+        "tokenEndpoint": "http://localhost:21000/oauth-server/oauth/token",
+        "tokenIntrospectionEndpoint": "http://localhost:21000/oauth-server/openplatform-oauth/tokenInfo",
+        "checkTokenEndpoint": "http://localhost:21000/oauth-server/oauth/check_token",
+        "authorizeEndpoint": "http://localhost:21000/oauth-server/oauth/authorize",
+        "userInfoEndpoint": "http://localhost:21000/oauth-server/oidc/userinfo",
+        "userLogoutEndpoint": "http://localhost:21000/oauth-server/logout",
+        "color": "#74e1f1"
+    },
+    "roleMappings": [
+        {
+            "condition": "{#jsonPath(#profile, '$.role') == \"ROLE_USER\"}",
+            "portal": "USER",
+            "management": "USER"
+        },
+        {
+            "condition": "{#jsonPath(#profile, '$.role') == \"ROLE_DEVELOPER\"}",
+            "portal": "USER",
+            "management": "API_PUBLISHER"
+        },
+        {
+            "condition": "{#jsonPath(#profile, '$.role') == \"ROLE_ADMINISTRATOR\"}",
+            "portal": "ADMIN",
+            "management": "ADMIN"
+        }
+    ],
+    "userProfileMapping": {
+        "id": "username",
+        "firstname": "name",
+        "lastname": "userid",
+        "email": "mail"
+    }
+}

@@ -1,0 +1,27 @@
+cas.server.name: cas-service:27000
+cas.server.prefix: cas-service:27000/cas
+
+
+#CONFIGDB PROPERTIES
+cas.authn.jdbc.query[0].url: jdbc:mysql://${CONFIGDBSERVERS}/onesaitplatform_config?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&autoReconnect=true
+cas.authn.jdbc.query[0].user: ${CONFIGDB_USER}
+cas.authn.jdbc.query[0].password: ${CONFIGDB_PASSWORD}
+
+#LDAP PROPERTIES
+cas.authn.ldap[0].ldapUrl: ${LDAP_SERVER}
+cas.authn.ldap[0].dnFormat: uid=%s,ou=onesait,ou=system
+cas.authn.ldap[0].bindDn: uid=admin,ou=system
+cas.authn.ldap[0].baseDn: ou=onesait,ou=system
+
+
+#SERVICE REGISTRY
+cas.serviceRegistry.mongo.port: ${REALTIMEDBPORT}
+cas.serviceRegistry.mongo.password: ${REALTIMEDBPASS}
+cas.serviceRegistry.mongo.userId: ${REALTIMEDBUSER}
+cas.serviceRegistry.mongo.host: ${REALTIMEDBHOST}
+
+
+
+onesaitplatform:
+  api_key: ${API_KEY}
+  base_url: http://controlpanelservice:18000/controlpanel

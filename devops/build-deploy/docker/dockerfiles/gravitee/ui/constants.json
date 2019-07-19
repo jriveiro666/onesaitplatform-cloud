@@ -1,0 +1,11 @@
+{
+  "baseURL": "${GRAVITEE_MAN_API}/management/",
+   "authentication" : {
+    "forceLogin" : {
+      "enabled" : true
+    },
+    "localLogin" : {
+      "enabled" : true
+    }
+  }
+}

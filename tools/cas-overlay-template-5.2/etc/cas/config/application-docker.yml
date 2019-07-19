@@ -1,0 +1,82 @@
+cas.server.name: cas-service
+cas.server.prefix: https://${SERVER_NAME}/cas
+logging.config: file:/etc/cas/config/log4j2-docker.xml
+server.port: 27000
+server.ssl.enabled: false
+
+#CONFIGDB PROPERTIES
+cas.authn.jdbc.query[0].url: jdbc:mysql://${CONFIGDBSERVERS}/onesaitplatform_config?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&autoReconnect=true
+cas.authn.jdbc.query[0].user: ${CONFIGDB_USER}
+cas.authn.jdbc.query[0].password: ${CONFIGDB_PASSWORD}
+cas.authn.jdbc.query[0].healthQuery: select 1
+cas.authn.jdbc.query[0].sql: SELECT * FROM user WHERE user_id = ?
+cas.authn.jdbc.query[0].passwordEncoder.type: com.minsait.custom.ConfigDBPasswordEncoder
+cas.authn.jdbc.query[0].passwordEncoder.characterEncoding: UTF-8
+cas.authn.jdbc.query[0].ddlAuto: none
+cas.authn.jdbc.query[0].driverClass: com.mysql.jdbc.Driver
+cas.authn.jdbc.query[0].dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+cas.authn.jdbc.query[0].fieldPassword: password
+
+#LDAP PROPERTIES
+cas.authn.ldap[0].ldapUrl: ${LDAP_SERVER}
+cas.authn.ldap[0].dnFormat: uid=%s,ou=onesait,ou=system
+cas.authn.ldap[0].bindDn: uid=admin,ou=system
+cas.authn.ldap[0].baseDn: ou=onesait,ou=system
+cas.authn.ldap[0].useSsl: false
+cas.authn.ldap[0].useStartTls: false
+cas.authn.ldap[0].connectTimeout: 5000
+cas.authn.ldap[0].userFilter: uid={user}
+cas.authn.ldap[0].subtreeSearch: true
+cas.authn.ldap[0].usePasswordPolicy: true
+
+
+cas.authn.attributeRepository.jdbc[0].attributes.full_name: full_name
+cas.authn.attributeRepository.jdbc[0].attributes.email: email
+cas.authn.attributeRepository.jdbc[0].attributes.role_id: role
+
+cas.authn.attributeRepository.jdbc[0].sql: SELECT * FROM user WHERE {0}
+cas.authn.attributeRepository.jdbc[0].username: user_id
+cas.authn.attributeRepository.jdbc[0].healthQuery: select 1
+cas.authn.attributeRepository.jdbc[0].isolateInternalQueries: false
+cas.authn.attributeRepository.jdbc[0].failFastTimeout: 1
+cas.authn.attributeRepository.jdbc[0].isolationLevelName: ISOLATION_READ_COMMITTED
+cas.authn.attributeRepository.jdbc[0].dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+cas.authn.attributeRepository.jdbc[0].leakThreshold: 10
+cas.authn.attributeRepository.jdbc[0].propagationBehaviorName: PROPAGATION_REQUIRED
+cas.authn.attributeRepository.jdbc[0].batchSize: 1
+cas.authn.attributeRepository.jdbc[0].user: root
+
+cas.authn.attributeRepository.jdbc[0].password: changeIt!
+cas.authn.attributeRepository.jdbc[0].autocommit: false
+cas.authn.attributeRepository.jdbc[0].driverClass: com.mysql.jdbc.Driver
+cas.authn.attributeRepository.jdbc[0].idleTimeout: 5000
+cas.authn.attributeRepository.jdbc[0].pool.suspension: false
+cas.authn.attributeRepository.jdbc[0].pool.minSize: 6
+cas.authn.attributeRepository.jdbc[0].pool.maxSize: 18
+cas.authn.attributeRepository.jdbc[0].pool.maxWait: 2000
+cas.authn.attributeRepository.jdbc[0].dataSourceProxy: false
+cas.authn.attributeRepository.jdbc[0].url: jdbc:mysql://${CONFIGDBSERVERS}/onesaitplatform_config?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&autoReconnect=true
+
+
+
+
+
+
+#SERVICE REGISTRY
+cas.serviceRegistry.mongo.clientUri: mongodb://${AUTHPARAMS}${REALTIMEDBSERVERS}/${REALTIMEDBNAME}?authSource=${AUTHDB}&sockettimeoutms=${QUERYTIMEOUT}
+cas.serviceRegistry.mongo.collection: cas_service_registry
+
+
+cas.ticket.registry.mongo.clientUri: mongodb://${AUTHPARAMS}${REALTIMEDBSERVERS}/${REALTIMEDBNAME}?authSource=${AUTHDB}&sockettimeoutms=${QUERYTIMEOUT}
+cas.ticket.registry.mongo.collection: cas_ticket_registry
+
+#SAML
+cas.authn.samlIdp.entityId: https://${SERVER_NAME}/cas/idp
+cas.authn.samlIdp.scope: ${SERVER_NAME}
+
+onesaitplatform:
+  api_key: ${API_KEY}
+  base_url: http://controlpanelservice:18000/controlpanel
+
+
+  

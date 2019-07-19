@@ -1,0 +1,17 @@
+version: "2.1"
+
+services:
+  gravitee-management-api:
+    image: onesaitplatform/cas-server:latest
+    container_name: cas-service 
+    ports:
+      - "8080:27000"
+    environment:
+      - REALTIMEDBUSER=cas
+      - REALTIMEDBPASS=cas
+      - API_KEY=46c734014c544601b51690ecc49cd29c
+      - REALTIMEDBUSER=platformadmin
+    extra_hosts:
+      - "realtimedb:192.168.20.32"
+      - "configdb:192.168.20.32"
+      - "localhost:192.168.20.32"

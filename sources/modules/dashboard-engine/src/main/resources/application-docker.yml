@@ -1,0 +1,59 @@
+onesaitplatform:
+   dashboardengine:
+      auth.token.endpoint: http://controlpanelservice:18000/controlpanel/api/login/info 
+   database.mongodb:
+      database: ${REALTIMEDBNAME}
+      servers: ${REALTIMEDBSERVERS} 
+      authenticationDatabase: ${REALTIMEDBAUTHDB}               
+      useAuth: ${REALTIMEDBUSEAUTH}
+      username: ${REALTIMEDBUSER}
+      password: ${REALTIMEDBPASS}
+      writeConcern: ${REALTIMEDBWRITECONCERN} 
+      quasar.connector.http.endpoint: http://${QUASARHOST}:${QUASARPORT}/query/fs/ 
+   database.hadoop.enabled: ${ENABLEHADOOP}
+   database.hdfs:
+      url: ${HDFSURL}
+      basePath: ${HDFSPATH}
+   database.hive:
+      url: ${HIVEURL}
+      username: ${HIVEUSERNAME}
+      password: ${HIVEPASSWORD}
+      driverClassName: ${HIVEDRIVERCLASS}
+   database.impala:
+      url: ${IMPALAURL}
+   database.kudu:
+      numreplicas: ${KUDUNUMREPLICAS}
+      address: ${KUDUURL}
+      includeKudutableName: ${INCLUDEKUDUTABLENAME}
+      client:
+        sessionTimeout: ${KUDUCLIENTSESSIONTIMEOUT}
+        flushMode: ${KUDUCLIENTFLUSHMODE}
+        prefix: ${KUDUCLIENTIMPALAPREFIX}
+        bossThreadPool: ${KUDUCLIENTBOSSTHREADPOOL}
+        workerThreadPool: ${KUDUCLIENTWORKERTHREADPOOL}
+        operationTimeout: ${KUDUCLIENTOPTIMEOUT}
+        adminOperationTimeout: ${KUDUCLIENTADMINOPTIMEOUT}
+        socketReadTimeout: ${KUDUCLIENTSOCKETREADTIMEOUT}
+   database.elasticsearch:
+      sql.connector.http.endpoint: http://${ELASTICDBHOST}:${ELASTICDBPORT}
+      url: ${ELASTICDBHOST}
+      port: 9300       
+   router.alternativeURL: http://routerservice:20000/router/router/
+   audit.global.notify: ${AUDITGLOBALNOTIFY}  
+   password.pattern: (?=^.{10,20}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$   
+   hazelcast.service.discovery.strategy: ${HZ_SERVICE_DISCOVERY_STRATEGY}     
+   hazelcast.service.discovery.zookeeper.url: ${HZ_ZOOKEEPER_URL}
+     
+spring:
+   datasource:  
+      url: ${JDBCPROTOCOL}//${CONFIGDBSERVERS}/onesaitplatform_config?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&autoReconnect=true${DBADDPROPS}
+   boot.admin: #Spring Boot Admin Config    
+      url: http://monitoringuiservice:18100/monitoring
+      client.service-url: http://dashboardengineservice:${server.port}${server.contextPath}/
+   data.mongodb:
+      host: ${REALTIMEDBSERVERS}
+   elasticsearch.jest:
+      uris: http://${ELASTICDBHOST}:${ELASTICDBPORT}      
+## LOGGING CONF
+logging:
+   path: /var/log/platform-logs

@@ -1,0 +1,22 @@
+
+<div ng-repeat="(index,item) in vm.tempConfig" id="{{vm.tempConfig[index].htmlId}}">  
+   
+  <div ng-class="{'ng-hide': vm.tempConfig[index].hide}">
+    <textfilter  ng-if="item.type == 'textfilter'  " idfilter="vm.tempConfig[index].id" resultfilter="vm.resultFilters[index]" datasource="vm.datasource" config="vm.tempConfig[index]"></textfilter>  
+    <numberfilter   ng-if="item.type == 'numberfilter' "   idfilter="vm.tempConfig[index].id" resultfilter="vm.resultFilters[index]" datasource="vm.datasource" config="vm.tempConfig[index]"></numberfilter>  
+    <intervaldatefilter ng-if="item.type == 'intervaldatefilter' "   idfilter="vm.tempConfig[index].id" resultfilter="vm.resultFilters[index]" datasource="vm.datasource" config="vm.tempConfig[index]"></intervaldatefilter>
+    <activaterefreshaction ng-if="item.type == 'activaterefreshaction' "   idfilter="vm.tempConfig[index].id" resultfilter="vm.resultFilters[index]" datasource="vm.datasource" config="vm.tempConfig[index]"></activaterefreshaction>    
+    <livefilter ng-if="item.type == 'livefilter' "   idfilter="vm.tempConfig[index].id" resultfilter="vm.resultFilters[index]" datasource="vm.datasource" config="vm.tempConfig[index]"></livefilter>    
+    <simpleselectfilter ng-if="item.type == 'simpleselectfilter' "  idfilter="vm.tempConfig[index].id" resultfilter="vm.resultFilters[index]" datasource="vm.datasource" config="vm.tempConfig[index]"></simpleselectfilter> 
+    <simpleselectnumberfilter ng-if="item.type == 'simpleselectnumberfilter' "  idfilter="vm.tempConfig[index].id" resultfilter="vm.resultFilters[index]" datasource="vm.datasource" config="vm.tempConfig[index]"></simpleselectnumberfilter>       
+    <multiselectfilter ng-if="item.type == 'multiselectfilter' "  idfilter="vm.tempConfig[index].id" resultfilter="vm.resultFilters[index]" datasource="vm.datasource" config="vm.tempConfig[index]"></multiselectfilter>    
+    <multiselectnumberfilter ng-if="item.type == 'multiselectnumberfilter' "  idfilter="vm.tempConfig[index].id" resultfilter="vm.resultFilters[index]" datasource="vm.datasource" config="vm.tempConfig[index]"></multiselectnumberfilter>    
+  </div>
+</div>
+
+<md-button ng-class="vm.buttonbig ? 'ok-button' : 'ok-button-small'"  ng-click="vm.sendFilters()">
+  OK
+</md-button>
+<md-button ng-class="vm.buttonbig ? 'ok-button' : 'ok-button-small'" ng-if="vm.hidebuttonclear === undefined || vm.hidebuttonclear === false"  ng-click="vm.cleanFilters()">
+    CLEAN FILTERS
+</md-button>

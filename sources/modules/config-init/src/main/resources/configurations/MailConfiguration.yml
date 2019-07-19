@@ -1,0 +1,14 @@
+#MailGun Config for SMTP
+mail:
+  host: smtp1.s.ipzmarketing.com 
+  port: 25
+  username: ENC(eCdq9QnYLKkOK+jzMzq6KgpaRYYHt2GV)
+  password: ENC(jD0nyx9jWpVaQpux3oXBHbd5gnXxFctr)
+  smtp:
+     auth: true
+     starttls_enable: false
+     starttls_required: false
+     timeout: 5000
+     connectiontimeout: 5000
+     writetimeout: 5000
+     from: support@onesaitplatform.com 

@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.minsait.controller.UserController,\
+com.minsait.custom.SSLUtil

@@ -1,0 +1,12 @@
+{
+  "server": {
+    "port": 10800
+  },
+  "mountings": {
+    "/": {
+      "mongodb": {
+        "connectionUri": "mongodb://${AUTHPARAMS}${REALTIMEDBSERVERS}/${AUTHDB}?sockettimeoutms=${QUERYTIMEOUT}"
+      }
+    }
+  }
+}

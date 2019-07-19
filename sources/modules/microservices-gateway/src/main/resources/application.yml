@@ -1,0 +1,39 @@
+server:
+  port: 26000
+spring:
+  application.name: microservices-gateway
+  security:
+    user:
+      name: operations
+      password: operations
+    basic:
+      enabled: true
+  cloud:
+    gateway:
+      routes:
+        - id: iotbroker
+          uri: http://localhost:19000
+          predicates:
+            - Path= /iot-broker/**
+        - id: dashboard
+          uri: http://localhost:18300
+          predicates:
+            - Path= /dashboardengine/**
+          filters:
+            - PreserveHostHeader
+        - id: controlpanel
+          uri: http://localhost:18000
+          predicates:
+            - Path= /controlpanel/**
+          filters:
+            - PreserveHostHeader
+          
+          
+
+webprojects:
+  folder: /tmp/webprojects/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

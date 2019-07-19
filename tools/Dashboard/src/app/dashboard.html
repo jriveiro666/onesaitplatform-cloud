@@ -1,0 +1,19 @@
+<!-- Dashboard edit component -->
+<edit-dashboard ng-if="vm.editmode" iframe="vm.iframe" id="vm.id" public="vm.public" dashboard="vm.dashboard" selectedpage="vm.selectedpage" synopticedit="vm.synopticEdit"></edit-dashboard>
+<!-- end Dashboard edit component -->
+
+<!-- header partial -->
+<ng-include src="'app/partials/view/header.html'"></ng-include>
+<!-- end header partial -->
+
+
+<ng-include src="'app/partials/view/tabsnav.html'"></ng-include>
+<!-- end sidenav partial -->
+
+<span>
+  <div id="printing" ng-style="vm.dashboard.header.enable && {'height': 'calc(100% - '+{{vm.dashboard.header.height}}+'px'+')'} || {'height': '100%'}" ng-repeat="page in vm.dashboard.pages" ng-if="vm.checkIndex($index)">
+   <synopticEditor  ng-if="vm.synopticEdit.showSynoptic && vm.synopticEdit.showEditor" config="vm.synopticEdit" synoptic="vm.dashboard.synoptic" dashboardheader="vm.dashboard.header" ></synopticEditor> 
+    <page page="page" synopticedit="vm.synopticEdit" iframe="vm.iframe" gridoptions="vm.dashboard.gridOptions" dashboardheader="vm.dashboard.header" editmode="vm.editmode" selectedlayer="vm.selectedlayer" synoptic="vm.dashboard.synoptic"  class="flex" ng-if="vm.checkIndex($index)"></page>
+  </div>
+</span>
+

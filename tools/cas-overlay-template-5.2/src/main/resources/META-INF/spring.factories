@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.minsait.controller.UserController,\
+com.minsait.security.AuthenticationConfigurer,\
+com.minsait.security.CustomAuthenticationPostProcessor,\
+com.minsait.service.UserManagementService

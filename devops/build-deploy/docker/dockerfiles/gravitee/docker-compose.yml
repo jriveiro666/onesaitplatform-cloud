@@ -1,0 +1,42 @@
+version: "2.1"
+
+services:
+  gravitee-management-api:
+    image: registry.onesaitplatform.com/onesaitplatform/gravitee-management-api:latest
+    container_name: gravitee-man-api  
+    ports:
+      - "8083:25000"
+    environment:
+      - REALTIMEDBUSEAUTH=false   
+      - AUTHPARAMS=     
+    extra_hosts:
+      - "elasticdb:172.22.155.160"
+      - "oauthservice:172.22.155.160"
+      - "realtimedb:172.22.155.160"
+      - "localhost:172.22.155.160"
+  gravitee-management-ui:
+    image: registry.onesaitplatform.com/onesaitplatform/gravitee-management-ui:latest
+    container_name: gravitee-man-ui  
+    ports:
+      - "8080:25002"
+    environment:
+      - REALTIMEDBUSEAUTH=false 
+      - GRAVITEE_MAN_API=172.20.10.40:8083     
+    extra_hosts:
+      - "gravitee-man-api:172.22.155.160"
+      - "oauthservice:172.22.155.160"
+      - "realtimedb:172.22.155.160"
+      - "localhost:172.22.155.160"
+  gravitee-gateway:
+    image: registry.onesaitplatform.com/onesaitplatform/gravitee-gateway:latest
+    container_name: gravitee-gateway  
+    ports:
+      - "8082:25001"
+    environment:
+      - REALTIMEDBUSEAUTH=false    
+      - AUTHPARAMS=  
+    extra_hosts:
+      - "elasticdb:172.22.155.160"
+      - "oauthservice:172.22.155.160"
+      - "realtimedb:172.22.155.160"
+      - "localhost:172.22.155.160"

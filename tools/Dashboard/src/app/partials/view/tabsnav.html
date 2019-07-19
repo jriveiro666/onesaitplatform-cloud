@@ -1,0 +1,7 @@
+<md-tabs ng-if="vm.dashboard.pages.length > 1" md-dynamic-height md-border-bottom>
+    <span ng-repeat="page in vm.dashboard.pages">
+  <md-tab label="one" ng-click="vm.setIndex($index)" >     
+          <md-tab-label>{{page.title}}</md-tab-label> 
+  </md-tab>
+  </span>
+</md-tabs> 

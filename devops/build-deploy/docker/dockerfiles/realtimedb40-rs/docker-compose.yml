@@ -1,0 +1,36 @@
+version: "2.1"
+
+services:
+  realtimedb-node1:
+    image: ${REPOSITORY}onesaitplatform/realtimedb:${MONGO_TAG}
+    container_name: realtimedb-node1
+    networks:
+      - replicasetnetwork
+    command: --replSet "rs0" --wiredTigerCacheSizeGB=3
+    ports:
+      - "27017:27017"
+    restart: on-failure
+  realtimedb-node2:
+    image: ${REPOSITORY}onesaitplatform/realtimedb:${MONGO_TAG}
+    container_name: realtimedb-node2
+    networks:
+      - replicasetnetwork
+    command: --replSet "rs0" --wiredTigerCacheSizeGB=3  
+    ports:
+      - "27018:27017"
+    restart: on-failure
+  realtimedb-node3:
+    image: ${REPOSITORY}onesaitplatform/realtimedb:${MONGO_TAG}
+    container_name: realtimedb-node3
+    networks:
+      - replicasetnetwork
+    command: --replSet "rs0" --wiredTigerCacheSizeGB=3
+    ports:
+      - "27019:27017"
+    restart: on-failure                        
+networks:
+  replicasetnetwork:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.29.0.0/16

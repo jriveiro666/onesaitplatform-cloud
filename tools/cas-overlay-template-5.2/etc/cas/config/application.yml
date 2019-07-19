@@ -1,0 +1,7 @@
+info:
+  description: CAS Configuration
+
+onesaitplatform:
+  api_key: e1ac0f181e7843a5b8fac0f77ec9aa09
+  api_key_header: X-OP-APIKey
+  base_url: http://localhost:18000/controlpanel

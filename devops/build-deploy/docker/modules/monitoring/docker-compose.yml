@@ -1,0 +1,20 @@
+version: "2.1"
+
+services:         
+  monitoringuiservice:
+    image: ${REPOSITORY}onesaitplatform/monitoringui:${MODULE_TAG}
+    container_name: monitoringuiservice 
+    environment:
+      - REALTIMEDBUSEAUTH=false          
+    networks:
+      - data_datanetwork
+    ports:
+     - "8092:18100"
+    external_links:
+     - configdb
+     - schedulerdb
+     - realtimedb 
+     - elasticdb
+networks:
+  data_datanetwork:
+    external: true

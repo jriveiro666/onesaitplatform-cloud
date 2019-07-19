@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" validUntil="2019-06-13T14:32:06Z" cacheDuration="PT1560868326S" entityID="cas-onesait">
+  <md:IDPSSODescriptor WantAuthnRequestsSigned="false" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+    <md:KeyDescriptor use="signing">
+      <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        <ds:X509Data>
+          <ds:X509Certificate>MIICHTCCAYYCCQC3gg6rL5d6dTANBgkqhkiG9w0BAQsFADBTMQswCQYDVQQGEwJTUDEPMA0GA1UECAwGTWFkcmlkMQ8wDQYDVQQHDAZNYWRyaWQxDjAMBgNVBAoMBUluZHJhMRIwEAYDVQQDDAlsb2NhbGhvc3QwHhcNMTkwNjExMDkxMjQzWhcNMjIwMzMxMDkxMjQzWjBTMQswCQYDVQQGEwJTUDEPMA0GA1UECAwGTWFkcmlkMQ8wDQYDVQQHDAZNYWRyaWQxDjAMBgNVBAoMBUluZHJhMRIwEAYDVQQDDAlsb2NhbGhvc3QwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAJww+C3AA6U78VghZYHxepXxJcLdPn5DzLgG2UaxwQYvfHJh8xjm5ZA5mePl6L+hRjl5HzMyZ0T6AuJRmyNDWM/2pcewIdebj65Kg5R4KcKZKxdkhW9MO3oxc5N/Rwb/3qSUaQ2wrRy1QfyXlXRkiQglHrdZ36tKudzggM89ndUxAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAazyeCL3vKZge5lLohnKrBjvskNYtOX/lCdLBf9gAyEqO97K8ArTSZG5t7VOx2qaBIQXmze544eQtFHpPmra24X+KjWr3GlmyZ1lsyYTbopNCp01P12kJxaxHG4+FASipo8hpPINM7Ws/EsmDmlJLUrGc/C3hMVaaQZQ/SL5Ai/w=</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </md:KeyDescriptor>
+    <md:KeyDescriptor use="encryption">
+      <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        <ds:X509Data>
+          <ds:X509Certificate>MIICHTCCAYYCCQC3gg6rL5d6dTANBgkqhkiG9w0BAQsFADBTMQswCQYDVQQGEwJTUDEPMA0GA1UECAwGTWFkcmlkMQ8wDQYDVQQHDAZNYWRyaWQxDjAMBgNVBAoMBUluZHJhMRIwEAYDVQQDDAlsb2NhbGhvc3QwHhcNMTkwNjExMDkxMjQzWhcNMjIwMzMxMDkxMjQzWjBTMQswCQYDVQQGEwJTUDEPMA0GA1UECAwGTWFkcmlkMQ8wDQYDVQQHDAZNYWRyaWQxDjAMBgNVBAoMBUluZHJhMRIwEAYDVQQDDAlsb2NhbGhvc3QwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAJww+C3AA6U78VghZYHxepXxJcLdPn5DzLgG2UaxwQYvfHJh8xjm5ZA5mePl6L+hRjl5HzMyZ0T6AuJRmyNDWM/2pcewIdebj65Kg5R4KcKZKxdkhW9MO3oxc5N/Rwb/3qSUaQ2wrRy1QfyXlXRkiQglHrdZ36tKudzggM89ndUxAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAazyeCL3vKZge5lLohnKrBjvskNYtOX/lCdLBf9gAyEqO97K8ArTSZG5t7VOx2qaBIQXmze544eQtFHpPmra24X+KjWr3GlmyZ1lsyYTbopNCp01P12kJxaxHG4+FASipo8hpPINM7Ws/EsmDmlJLUrGc/C3hMVaaQZQ/SL5Ai/w=</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </md:KeyDescriptor>
+    <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat>
+    <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://localhost:8080/cas/idp/profile/SAML2/Redirect/SSO"/>
+     <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://localhost:8080/cas/idp/profile/SAML2/POST/SSO"/>
+  </md:IDPSSODescriptor>
+</md:EntityDescriptor>

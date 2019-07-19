@@ -1,0 +1,17 @@
+{
+  "name": "DashboardExporter",
+  "version": "1.0.0",
+  "description": "Dashboard Exporter for onesaitplatform",
+  "author": "onesaitplatform",
+  "main": "server.mjs",
+  "scripts": {
+    "start": "node --experimental-modules server.mjs"
+  },
+  "dependencies": {
+    "express": "4.17.1",
+    "puppeteer": "1.17.0",
+    "puppeteer-cluster": "0.16.0",
+    "winston": "3.2.1",
+    "winston-daily-rotate-file": "3.9.0"
+  }
+}

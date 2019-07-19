@@ -1,0 +1,10 @@
+{
+  "@class" : "org.apereo.cas.support.oauth.services.OAuthRegisteredService",
+  "clientId": "onesaitplatform",
+  "clientSecret": "onesaitplatform",
+  "bypassApprovalPrompt": true,
+  "generateRefreshToken": true,
+  "serviceId" : "onesaitplatform",
+  "name" : "MyOAuthservice",
+  "id" : 10000002
+}

@@ -1,0 +1,9 @@
+spring:
+  security:
+    user:
+      name: ${GATEWAY_CLIENT}
+      password: ${GATEWAY_SECRET}
+
+## LOGGING CONF
+logging:
+   path: /var/log/platform-logs

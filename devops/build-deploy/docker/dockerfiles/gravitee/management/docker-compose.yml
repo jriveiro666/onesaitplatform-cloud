@@ -1,0 +1,14 @@
+version: "2.1"
+
+services:
+  gravitee-management-api:
+    image: onesaitplatform/gravitee-management-api:latest
+    container_name: gravitee-man-api  
+    ports:
+      - "8083:25000"
+    environment:
+      - REALTIMEDBUSEAUTH=false      
+    extra_hosts:
+      - "elasticdb:192.168.1.11"
+      - "oauthservice:192.168.1.11"
+      - "realtimedb:192.168.1.11"
