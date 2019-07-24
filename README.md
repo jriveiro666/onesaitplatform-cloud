@@ -1,4 +1,5 @@
 <p align="center">
+
   <a src='https://www.onesaitplatform.com/'>
     <img src='resources/images/onesait-platform-logo.png'/>
   </a>
