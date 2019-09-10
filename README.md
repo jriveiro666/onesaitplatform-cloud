@@ -1,7 +1,7 @@
 <p align="center">
 
   <a src='https://www.onesaitplatformrevolution.com/#/proposito/en'>
-    <img src='resources/images/onesait-platform-community-logo.png'/>
+    <img src='resources/images/onesait-platform-community-logo.jpg'/>
   </a>
 </p>
 
