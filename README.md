@@ -83,4 +83,4 @@ To contribute to onesait Platform, please visit [How to contribute](https://ones
 onesait Platform is Open Source software released under the [Apache Software License 2.0](http://www.apache.org/licenses/LICENSE-2.0).
 
 See [`LICENSE`](LICENSE) and [`copyright.txt`](copyright.txt) for details.
-
+ 
