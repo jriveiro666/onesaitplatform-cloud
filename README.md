@@ -22,13 +22,13 @@ The Platform is the technological base that capitalizes and extracts value from 
 </p>
 
 More info in our [Vision](https://onesaitplatform.atlassian.net/wiki/spaces/OP/pages/393228/Vision)
-
+ 
 ## Roadmap
 
 As we are working on a open source model, you can participate in our roadmap, besides this we have a roadmap for 2018 and 2019, you can view it here:
 [2018-2019 Roadmap](https://onesaitplatform.atlassian.net/wiki/spaces/OP/pages/32979/Roadmap+onesait+Platform+Cloud)
 
-
+ 
 ## Technology
 
 onesait Cloud Platform is built mainly on Java technology, developed as a  Spring-powered microservices architecture and deploy with Docker and Kubernetes.
@@ -84,4 +84,4 @@ To contribute to onesait Platform, please visit [How to contribute](https://ones
 onesait Platform is Open Source software released under the [Apache Software License 2.0](http://www.apache.org/licenses/LICENSE-2.0).
 
 See [`LICENSE`](LICENSE) and [`copyright.txt`](copyright.txt) for details.
-
+ 
