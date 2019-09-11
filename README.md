@@ -27,7 +27,7 @@ More info in our [Vision](https://onesaitplatform.atlassian.net/wiki/spaces/OP/p
 As we are working on a open source model, you can participate in our roadmap, besides this we have a roadmap for 2018 and 2019, you can view it here:
 [2018-2019 Roadmap](https://onesaitplatform.atlassian.net/wiki/spaces/OP/pages/32979/Roadmap+onesait+Platform+Cloud)
 
-
+ 
 ## Technology
 
 onesait Cloud Platform is built mainly on Java technology, developed as a  Spring-powered microservices architecture and deploy with Docker and Kubernetes.
