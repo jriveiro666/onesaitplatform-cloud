@@ -21,7 +21,7 @@ The Platform is the technological base that capitalizes and extracts value from 
 </p>
 
 More info in our [Vision](https://onesaitplatform.atlassian.net/wiki/spaces/OP/pages/393228/Vision)
-
+ 
 ## Roadmap
 
 As we are working on a open source model, you can participate in our roadmap, besides this we have a roadmap for 2018 and 2019, you can view it here:
