@@ -1,11 +1,10 @@
 <p align="center">
-
   <a src='https://www.onesaitplatformrevolution.com/#/proposito/en'>
     <img src='resources/images/onesait-platform-community-logo.jpg'/>
   </a>
 </p>
 
-## Why?
+## Why us?
 We are sure that we have a unique offer in the market based on a combination of differential elements:
 <p align="center">
     <img src='resources/images/onesait-platform-what_make_us_differential.png'/>
