@@ -10,6 +10,7 @@ We are sure that we have a unique offer in the market based on a combination of 
     <img src='resources/images/onesait-platform-what_make_us_differential.png'/>
 </p>
 
+
 [Read more](https://onesaitplatform.atlassian.net/wiki/spaces/OP/overview)
 
 ## What is?
