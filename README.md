@@ -72,8 +72,8 @@ onesaitPlatform uses Gitlab/Github’s integrated issue tracking system to recor
 
 The project follows this skeleton:
 *  [devops](devops/) with information like Dockerfiles, docker-compose.yml, scripts to generate images, jenkins pipelines,...
-*  [sources](sources/) all the sources of the platform
-*  [tools](tools/) files needed to execute some tools included in the platform
+*  [sources](sources/) all the sources of the platform.
+*  [tools](tools/) files needed to execute some tools included in the platform.
 
 ## How to contribute
 
